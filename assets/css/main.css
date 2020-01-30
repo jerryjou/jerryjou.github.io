@@ -2169,7 +2169,7 @@ input, select, textarea {
 				}
 
 					#nav ul li a.active span:before {
-						color: #e27689;
+						color: #745dbf;
 					}
 
 /* Footer */
@@ -2248,7 +2248,18 @@ input, select, textarea {
 
 			#main > section.one {
 				background-color: #81918E;
+				/* color: #110A1E; */
+				font-weight: bold;
 				background-image: url("../../images/banner.jpg");
+				  /* Set a specific height */
+				min-height: 500px; 
+
+				/* Create the parallax scrolling effect */
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+
 			}
 
 			#main > section.two {
