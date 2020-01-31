@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Traffic Jam Game</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/puzzle.css">
+</head>
+
+<body>
+    <div id="instruction">Cars (Blocks) are placed on the game board. They can only move forwards or
+        backwards, not sideways.
+        They cannot turn. Your goal is to move the red car out to the right side of the
+        board.</div>
+    <div id="exit">Exit</div>
+    <div class="container">
+        <div class="mainboxX ">
+            <div class="mainboxY d-flex flex-row">
+                <div id="car2" class="carY bg-primary"></div>
+                <div id="car4" class="carY bg-dark"></div>
+                <div id="truck2" class="truckY bg-light"></div>
+                <div id="car6" class="carY bg-info"></div>
+                <div id="car8" class="carY bg-secondary"></div>
+                <div id="truck4" class="truckY bg-warning"></div>
+            </div>
+            <div id="car1" class="carX bg-warning"></div>
+            <div id="truck1" class="truckX bg-success"></div>
+            <div id="red_car" class="carX bg-danger"></div>
+            <div id="car3" class="carX bg-info"></div>
+            <div id="car5" class="carX bg-success"></div>
+            <div id="car7" class="carX bg-secondary"></div>
+        </div>
+        <div class="scoreBox text-center mt-3">
+            <h4>Moves: <span id="score">0</span></h4>
+        </div>
+        <!-- <div class="jumbotron text-center mt-5">
+            <h3>Top 10 scores</h3>
+            <ul class="list-group">
+                <c:forEach items="${topScores}" var="score">
+                    <li class="list-group-item w-50 mx-auto mt-2">
+                        <h5>${score.name} - ${score.move}</h5>
+                    </li>
+                </c:forEach>
+            </ul>
+        </div> -->
+        <!--submit score Modal-->
+        <div class="modal fade" id="score_modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Good Job!</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form id="submit_score_form" action="/submitScore" method="POST">
+                            <div class="form-group">
+                                <label class="col-form-label">You won in:</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="move" name="move" value="" readonly>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="basic-addon2">Moves</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="form-group">
+                                <label class="col-form-label">Enter your name to submit your score:</label>
+                                <input type="text" class="form-control" name="name">
+                            </div> -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="restart_btn" class="btn btn-danger">Restart</button>
+                        <!-- <button type="button" id="submit_btn" type="submit" class="btn btn-primary">Submit</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--load jQuery and jQuery UI-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/puzzle.js"></script>
+</body>
+
+</html>
